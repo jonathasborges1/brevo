@@ -85,7 +85,7 @@ export const overrides = (theme: Theme): TypographyVariantsOptions => (
       [theme.breakpoints.up("lg")]: { fontSize: "2.5rem" },
    },
 
-    body1: {
+    body1: { // body1 -> <p></p>
       fontSize: "1rem", 
       fontWeight:400,
       color: applyColor(theme),

@@ -53,6 +53,10 @@ function App() {
           autoHideDuration={5000}
           maxSnack={3}
           preventDuplicate
+          anchorOrigin={{
+            vertical: 'bottom', // Posição vertical inferior
+            horizontal: 'right', // Posição horizontal direita
+          }}
         >
           <CssBaseline/> 
           <HomeVite></HomeVite>

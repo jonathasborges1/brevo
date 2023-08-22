@@ -1,6 +1,9 @@
-import { createContact, getContacts } from '@modules/contact';
-import { Button } from '@mui/material';
 import React from 'react';
+
+import { Button, Grid } from '@mui/material';
+import { getContacts } from '@modules/contact/service';
+import CreateContact from '@pages/Home/form/CreateContact';
+
 
 interface HomeProps {
    children?: React.ReactNode;
@@ -8,21 +11,24 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({  ...props }) => {
 
-   const handleCreateContact = () => {
-      createContact();
-   }
-
    const handleGetAllContacts = () => {
       console.log("handleCreateContact")
       getContacts();
    }
 
    return (
-      <div { ...props}>
-         home
-         <Button variant={"contained"} onClick={()=>handleCreateContact()} >Teste</Button>
-         <Button variant={"contained"} onClick={()=>handleGetAllContacts()} >Busca Todos</Button>
-      </div>
+      <Grid container { ...props} justifyContent={"center"} alignItems={"center"} gap={1} >
+         {/* home */}
+
+         <Grid item xs={12} sm={8} md={8} lg={5.5} sx={{border:"0px solid red"}}>
+            <Button variant={"contained"} onClick={()=>handleGetAllContacts()} >Busca Todos</Button>
+         </Grid>
+
+         <Grid item xs={12} sm={8} md={8} lg={5.5} sx={{border:"0px solid red"}}>
+            <CreateContact/>
+         </Grid>
+         
+      </Grid>
    )
 }
 
